@@ -1,0 +1,18 @@
+import math
+def fact(k):
+    f = 1
+    while(k!=0):
+        f=f*k;
+        k=k-1;
+    return f
+def estimate_pi():
+    y=0
+    k=0
+    while True:
+        exp = (fact(4*k)*(1103+26390*k))/(math.pow(fact(k),4)* math.pow(396,4*k))
+        if exp < 1e-15:
+            break;
+        else:
+            y=y+exp;
+    return y
+estimate_pi()        

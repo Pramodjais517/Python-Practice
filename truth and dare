@@ -1,0 +1,64 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+int t,i=1,j,k,tr,dr,ts,ds,existt=0,existd=0,truth =0,dare=0;
+scanf("%d",&t);
+while(i<=t)
+{
+scanf("%d",&tr);
+int Tr[tr];
+for(j=0;j<tr;j++)
+scanf("%d",&Tr[j]);
+scanf("%d",&dr);
+int Dr[dr];
+for(j=0;j<dr;j++)
+scanf("%d",&Dr[j]);
+scanf("%d",&ts);
+int Ts[ts];
+for(j=0;j<ts;j++)
+scanf("%d",&Ts[j]);
+scanf("%d",&ds);
+int Ds[ds];
+if(tr < ts && dr <ds)
+{
+for(j=0;j<ds;j++)
+scanf("%d",&Ds[j]);
+for(j=0;j<ts;j++)
+{
+for(k=0;k<tr;k++)
+{
+if(Ts[j] == Tr[k])
+existt++;
+}
+if(existt == 0)
+{
+printf("no");
+truth = 1;
+exit(0);
+} 
+}
+for(j=0;j<ds;j++)
+{
+for(k=0;k<dr;k++)
+{
+if(Ds[j] == Dr[k])
+existd++;
+}
+if(existd == 0)
+{
+printf("no");
+dare =1;
+exit(0);
+}
+}
+}
+else {
+printf("no");
+}
+if(truth !=1 || dare !=1)
+printf("yes");
+i++;
+}
+return 0;
+}
